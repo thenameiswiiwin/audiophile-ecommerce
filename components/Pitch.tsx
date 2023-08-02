@@ -21,13 +21,23 @@ const Pitch = () => {
           src="/shared/mobile/image-best-gear.jpg"
           alt=""
         />
+        <img
+          className="hidden h-[300px] w-full rounded-[8px] object-cover md:block lg:hidden"
+          src="/shared/tablet/image-best-gear.jpg"
+          alt=""
+        />
+        <img
+          className="hidden h-[588px] max-w-[540px] rounded-[8px] lg:block"
+          src="/shared/desktop/image-best-gear.jpg"
+          alt=""
+        />
       </div>
-      <div className="w-full text-center">
-        <h2 className="text-[28px] font-bold uppercase tracking-[1px]">
+      <div className="w-full text-center lg:text-left">
+        <h2 className="text-[28px] font-bold uppercase tracking-[1px] md:text-[40px] md:leading-[44px] md:tracking-[1.43px]">
           Bringing you the <span className="text-orange-primary">best</span>{' '}
           audio gear
         </h2>
-        <p className="mx-auto max-w-[573px] pt-[32px] text-[15px] font-medium leading-[25px] opacity-50">
+        <p className="mx-auto max-w-[573px] pt-[32px] text-[15px] font-medium leading-[25px] opacity-50 lg:mx-0">
           Located at the heart of New York City, Audiophile is the premier store
           for high end headphones, earphones, speakers, and audio accessories.
           We have a large showroom and luxury demonstration rooms available for

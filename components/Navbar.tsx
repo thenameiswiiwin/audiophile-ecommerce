@@ -10,7 +10,6 @@ const Navbar = () => {
   return (
     <nav className="bg-black lg:px-0">
       <div className="flex items-center justify-between px-[30px] py-8 md:mx-auto md:max-w-[1174px]">
-        {/* Hamburger Icon */}
         <Image
           src="/shared/tablet/icon-hamburger.svg"
           width={16}
@@ -19,8 +18,7 @@ const Navbar = () => {
           onClick={() => console.log('clicked')}
           className="cursor-pointer lg:hidden"
         />
-        {/*  Logo */}
-        <div>
+        <div className="md:w-full md:pl-[42px] lg:w-max lg:pl-0">
           <Link href={'/'} className="block w-max">
             <Image
               src="/shared/desktop/logo.svg"
@@ -30,7 +28,6 @@ const Navbar = () => {
             />
           </Link>
         </div>
-        {/* Nav Items */}
         <div className="hidden gap-x-8 uppercase text-white lg:flex">
           {navLinks.map((link) => (
             <Link

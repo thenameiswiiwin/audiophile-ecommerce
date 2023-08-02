@@ -8,11 +8,11 @@ import { categories } from '@/constants'
 
 const Categories = () => {
   return (
-    <div className="z-1 mt-20">
+    <div className="z-1 mt-20 md:flex md:justify-between lg:flex">
       {categories.map((category) => (
         <div
           key={nanoid()}
-          className="relative mb-[60px] rounded-lg bg-gray-base p-10 pt-20"
+          className="relative mb-[60px] rounded-lg bg-gray-base p-10 pt-20 md:w-[32%] md:justify-between"
         >
           <Link href={`/${category.title}`} key={nanoid()}>
             <Image
@@ -22,7 +22,7 @@ const Categories = () => {
               alt="Logo"
               className="absolute inset-x-[50%] top-[50%] translate-x-[-50%] translate-y-[-100%] justify-center"
             />
-            <p className="mt-5 text-center text-[15px] font-bold uppercase">
+            <p className="mt-5 text-center text-[15px] font-bold uppercase lg:text-[18px]">
               {category.title}
             </p>
             <div className="mt-[20px] flex items-center justify-center">
@@ -34,7 +34,7 @@ const Categories = () => {
                 width={20}
                 height={20}
                 alt="Logo"
-                onClick={() => console.log('clicked')}
+                onClick={() => console.log('click')}
                 className="z-1 h-[15px] w-[10px] items-center"
               />
             </div>
