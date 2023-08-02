@@ -1,5 +1,7 @@
 import Categories from '@/components/Categories'
+import EarbudPromo from '@/components/EarbudPromo'
 import Hero from '@/components/Hero'
+import Pitch from '@/components/Pitch'
 import SpeakerBanner from '@/components/SpeakerBanner'
 import SpeakerPromo from '@/components/SpeakerPromo'
 
@@ -11,8 +13,8 @@ export default function Home() {
         <Categories />
         <SpeakerPromo />
         <SpeakerBanner />
-        <div>EarbudPromo</div>
-        <div>Pitch</div>
+        <EarbudPromo />
+        <Pitch />
       </div>
     </main>
   )
