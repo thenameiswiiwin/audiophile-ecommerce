@@ -31,3 +31,15 @@ export const categories = [
     image: '/shared/desktop/image-earphones.png',
   },
 ]
+
+export const socials = [
+  {
+    image: '/shared/desktop/icon-facebook.svg',
+  },
+  {
+    image: '/shared/desktop/icon-twitter.svg',
+  },
+  {
+    image: '/shared/desktop/icon-instagram.svg',
+  },
+]
