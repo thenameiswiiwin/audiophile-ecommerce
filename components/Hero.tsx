@@ -1,6 +1,6 @@
 import { products } from '@/data'
 
-import { Button } from './Button'
+import Button from './Button'
 
 const Hero = () => {
   const headphone = products[3]
@@ -35,7 +35,11 @@ const Hero = () => {
             made for the passionate music enthusiast.
           </p>
           <div className="mx-auto block w-max lg:mx-0">
-            <Button intent="primary" href={`/headphones/${headphone.slug}`}>
+            <Button
+              href={`/headphones/${headphone.slug}`}
+              intent="primary"
+              size="base"
+            >
               See Product
             </Button>
           </div>

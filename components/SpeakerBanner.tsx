@@ -1,6 +1,6 @@
 import { products } from '@/data'
 
-import { Button } from './Button'
+import Button from './Button'
 
 const SpeakerBanner = () => {
   const speaker = products[4]
@@ -11,7 +11,7 @@ const SpeakerBanner = () => {
         {speaker.name}
       </h2>
       <div className="w-max">
-        <Button href={`/speakers/${speaker.slug}`} intent="outline">
+        <Button href={`/speakers/${speaker.slug}`} intent="outline" size="base">
           See product
         </Button>
       </div>

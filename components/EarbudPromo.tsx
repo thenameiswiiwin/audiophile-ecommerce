@@ -1,6 +1,6 @@
 import { products } from '@/data'
 
-import { Button } from './Button'
+import Button from './Button'
 
 const EarbudPromo = () => {
   const earphone = products[0]
@@ -29,7 +29,11 @@ const EarbudPromo = () => {
           {earphone.name.replace('Wireless', '')}
         </h2>
         <div className="w-max">
-          <Button href={`/earphones/${earphone.slug}`} intent="outline">
+          <Button
+            href={`/earphones/${earphone.slug}`}
+            intent="outline"
+            size="base"
+          >
             See Product
           </Button>
         </div>
