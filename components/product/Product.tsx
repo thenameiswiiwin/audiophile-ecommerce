@@ -1,10 +1,22 @@
+'use client'
+
+import { usePathname } from 'next/navigation'
+
+import { products } from '@/data'
+
 import GoBack from '../GoBack'
 import Features from './Features'
 import Overview from './Overview'
 import ProductPictures from './ProductPictures'
 import Recommended from './Recommended'
 
-const Product = ({ productArray }) => {
+const Product = () => {
+  const pathname = usePathname()
+
+  const splitPathname = pathname.split('/')
+  const productPath = splitPathname[2]
+  const productArray = products.find((product) => product.slug === productPath)
+
   return (
     <div>
       <GoBack />
