@@ -5,6 +5,7 @@ import { Manrope } from 'next/font/google'
 
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
+import { Providers } from '@/redux/provider'
 
 const manrope = Manrope({ subsets: ['latin'] })
 
@@ -21,11 +22,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={manrope.className}>
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
+      <Providers>
+        <body className={manrope.className}>
+          <Navbar />
+          {children}
+          <Footer />
+        </body>
+      </Providers>
     </html>
   )
 }
