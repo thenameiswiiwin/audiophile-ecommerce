@@ -8,6 +8,7 @@ import { useState } from 'react'
 
 import { navLinks } from '@/constants'
 
+import Cart from './Cart'
 import HamburgerMenu from './HamburgerMenu'
 
 const Navbar = () => {
@@ -87,7 +88,19 @@ const Navbar = () => {
             <div className="fixed inset-0 z-20 bg-black/40"></div>
           </div>
         )}
-        {/* Cart Menu */}
+        <div className="relative mx-auto max-w-[1174px]">
+          {openCart && (
+            <div className="absolute mt-[24px] w-full px-6 md:right-14 md:w-[377px]">
+              <Cart openCart={openCart} setOpenCart={setOpenCart} />
+              <div
+                onClick={() => {
+                  setOpenCart(!openCart)
+                }}
+                className="fixed inset-0 z-20 bg-black opacity-40"
+              ></div>
+            </div>
+          )}
+        </div>
       </nav>
     </div>
   )

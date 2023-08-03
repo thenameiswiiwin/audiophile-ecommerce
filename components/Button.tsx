@@ -1,6 +1,5 @@
 import type { VariantProps } from 'class-variance-authority'
 import { cva } from 'class-variance-authority'
-import clsx from 'clsx'
 import Link from 'next/link'
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react'
 
@@ -19,7 +18,7 @@ interface ButtonAsButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 type ButtonProps = ButtonBaseProps & (ButtonAsAnchorProps | ButtonAsButtonProps)
 
 const buttonClasses = cva(
-  'flex h-[48px] w-[160px] items-center justify-center text-center text-[13px] font-bold uppercase tracking-[1px] transition-all',
+  'flex items-center justify-center text-center text-[13px] font-bold uppercase tracking-[1px] transition-all',
   {
     variants: {
       intent: {
@@ -27,21 +26,22 @@ const buttonClasses = cva(
         secondary: 'bg-black text-white hover:bg-gray-dark',
         outline:
           'border-[1px] border-black text-black hover:bg-black hover:text-white',
+        ghost: 'cursor-not-allowed bg-gray-dark text-white',
+      },
+      size: {
+        base: 'h-[48px] w-[160px]',
+        lg: 'h-[48px] w-full',
+      },
+      defaultVariants: {
+        variant: 'primary',
+        size: 'base',
       },
     },
   },
 )
 
-export const Highlight = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode
-  className?: string
-}) => <span className={clsx('highlight', className)}>{children}</span>
-
-export const Button = ({ children, intent, ...props }: ButtonProps) => {
-  const classes = buttonClasses({ intent, className: props.className })
+const Button = ({ children, intent, size, ...props }: ButtonProps) => {
+  const classes = buttonClasses({ intent, size, className: props.className })
 
   if ('href' in props && props.href !== undefined) {
     return (
@@ -57,3 +57,5 @@ export const Button = ({ children, intent, ...props }: ButtonProps) => {
     </button>
   )
 }
+
+export default Button
