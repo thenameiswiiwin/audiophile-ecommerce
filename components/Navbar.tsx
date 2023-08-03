@@ -4,6 +4,7 @@ import clsx from 'clsx'
 import { nanoid } from 'nanoid'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
 import { navLinks } from '@/constants'
@@ -14,18 +15,17 @@ import HamburgerMenu from './HamburgerMenu'
 const Navbar = () => {
   const [menu, setMenu] = useState(false)
   const [openCart, setOpenCart] = useState(false)
+  const pathname = usePathname()
+
+  const pathSplit = pathname.split('/')
+  const categoryPath = `/${pathSplit[1]}`
 
   const totalItems = 0
 
   return (
     <div className="relative">
       <nav className="bg-black lg:px-0">
-        <div
-          className={clsx(
-            'relative z-50 flex items-center justify-between px-[30px] py-8 md:mx-auto md:max-w-[1174px]',
-            menu ? 'bg-black lg:bg-transparent' : '',
-          )}
-        >
+        <div className="relative z-50 flex items-center justify-between px-[30px] py-8 md:mx-auto md:max-w-[1174px]">
           <Image
             src="/shared/tablet/icon-hamburger.svg"
             width={16}
@@ -52,7 +52,13 @@ const Navbar = () => {
               <Link
                 key={nanoid()}
                 href={link.path}
-                className="font-bold transition-all hover:text-orange-primary"
+                className={clsx(
+                  'font-bold transition-all hover:text-orange-primary',
+                  categoryPath === link.path
+                    ? 'text-orange-primary'
+                    : 'text-white',
+                  pathname === link.path ? 'cursor-default' : 'cursor-pointer',
+                )}
               >
                 {link.title}
               </Link>
