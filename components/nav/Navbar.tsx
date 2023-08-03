@@ -8,11 +8,14 @@ import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
 import { navLinks } from '@/constants'
+import { useAppSelector } from '@/redux/hooks'
+import type { RootState } from '@/redux/store'
 
 import Cart from './Cart'
 import HamburgerMenu from './HamburgerMenu'
 
 const Navbar = () => {
+  const cart = useAppSelector((state: RootState) => state.cartReducer.cart)
   const [menu, setMenu] = useState(false)
   const [openCart, setOpenCart] = useState(false)
   const pathname = usePathname()
@@ -20,7 +23,11 @@ const Navbar = () => {
   const pathSplit = pathname.split('/')
   const categoryPath = `/${pathSplit[1]}`
 
-  const totalItems = 0
+  let totalItems = 0
+
+  if (cart) {
+    totalItems = cart.reduce((acc, product) => acc + product.quantity, 0)
+  }
 
   return (
     <div className="relative">
@@ -64,7 +71,7 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-          <div>
+          <div className="relative">
             <Image
               src="/shared/desktop/icon-cart.svg"
               width={20}

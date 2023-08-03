@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid'
 import Image from 'next/image'
 
 import { emptyCart } from '@/redux/features/cartSlice'
@@ -5,6 +6,7 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import type { RootState } from '@/redux/store'
 
 import Button from '../Button'
+import CartItem from './CartItem'
 
 interface CartProps {
   openCart: boolean
@@ -36,7 +38,7 @@ const Cart = ({ openCart, setOpenCart }: CartProps) => {
               className="hover:text-orange text-[15px] font-medium underline underline-offset-1 opacity-50 hover:opacity-100"
               onClick={() => dispatch(emptyCart())}
             >
-              ; Remove all
+              Remove all
             </button>
           ) : (
             ''
@@ -57,7 +59,7 @@ const Cart = ({ openCart, setOpenCart }: CartProps) => {
             </div>
           </div>
         )}
-        {/* {cart?.map(() => <div>CartItem</div>)} */}
+        {cart?.map((product) => <CartItem key={nanoid()} product={product} />)}
         <div className="mt-[32px] flex justify-between">
           <p className="text-[15px] font-medium opacity-50">TOTAL</p>
           <p className="text-[18px] font-bold">
