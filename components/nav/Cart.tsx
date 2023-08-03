@@ -4,7 +4,7 @@ import { emptyCart } from '@/redux/features/cartSlice'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import type { RootState } from '@/redux/store'
 
-import Button from './Button'
+import Button from '../Button'
 
 interface CartProps {
   openCart: boolean

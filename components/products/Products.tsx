@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid'
 
-import Button from './Button'
+import Button from '../Button'
 
 interface Product {
   category: string

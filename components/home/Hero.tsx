@@ -1,6 +1,6 @@
 import { products } from '@/data'
 
-import Button from './Button'
+import Button from '../Button'
 
 const Hero = () => {
   const headphone = products[3]

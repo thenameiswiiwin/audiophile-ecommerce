@@ -1,4 +1,4 @@
-import Categories from './Categories'
+import Categories from '../Categories'
 
 const HamburgerMenu = () => {
   return (

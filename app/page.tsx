@@ -1,9 +1,9 @@
 import Categories from '@/components/Categories'
-import EarbudPromo from '@/components/EarbudPromo'
-import Hero from '@/components/Hero'
+import EarbudPromo from '@/components/home/EarbudPromo'
+import Hero from '@/components/home/Hero'
+import SpeakerBanner from '@/components/home/SpeakerBanner'
+import SpeakerPromo from '@/components/home/SpeakerPromo'
 import Pitch from '@/components/Pitch'
-import SpeakerBanner from '@/components/SpeakerBanner'
-import SpeakerPromo from '@/components/SpeakerPromo'
 
 export default function Home() {
   return (

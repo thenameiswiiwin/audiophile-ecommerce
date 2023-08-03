@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation'
 
 import Categories from '@/components/Categories'
 import Pitch from '@/components/Pitch'
-import Products from '@/components/Products'
+import Products from '@/components/products/Products'
 import { products } from '@/data'
 
 export default function CategoryPage() {
