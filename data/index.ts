@@ -1,4 +1,6 @@
-export const products = [
+import type { Product } from '@/types'
+
+export const products: Product[] = [
   {
     id: 1,
     slug: 'yx1-earphones',

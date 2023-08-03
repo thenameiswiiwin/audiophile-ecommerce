@@ -1,6 +1,8 @@
+import type { Product } from '@/types'
+
 import AddToCart from '../AddToCard'
 
-const Overview = ({ productArray }) => {
+const Overview = ({ productArray }: { productArray: Product }) => {
   return (
     <div className="flex w-full flex-col gap-[40px] md:flex-row md:items-center md:gap-[69px] lg:gap-[124.5px]">
       <div className="w-full">

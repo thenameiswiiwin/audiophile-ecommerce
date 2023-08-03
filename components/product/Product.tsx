@@ -17,6 +17,9 @@ const Product = () => {
   const productPath = splitPathname[2]
   const productArray = products.find((product) => product.slug === productPath)
 
+  if (!productArray) {
+    return <div>Product not found</div>
+  }
   return (
     <div>
       <GoBack />

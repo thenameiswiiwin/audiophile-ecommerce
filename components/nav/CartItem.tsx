@@ -6,22 +6,9 @@ import {
   removeFromCart,
 } from '@/redux/features/cartSlice'
 import { useAppDispatch } from '@/redux/hooks'
+import type { Product } from '@/types'
 
-interface Product {
-  id: string
-  shortName: string
-  price: number
-  quantity: number
-  image: {
-    mobile: string
-  }
-}
-
-interface CartItemProps {
-  product: Product
-}
-
-const CartItem = ({ product }: CartItemProps) => {
+const CartItem = ({ product }: { product: Product }) => {
   const dispatch = useAppDispatch()
 
   return (
