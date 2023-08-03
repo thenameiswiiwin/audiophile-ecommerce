@@ -39,9 +39,9 @@ const CartItem = ({ product }: CartItemProps) => {
           <p className="opacity-50">$ {product.price.toLocaleString()}</p>
         </div>
       </div>
-      <div className="bg-grey flex h-[40px] min-w-[96px] items-center justify-around">
+      <div className="flex h-[40px] min-w-[96px] items-center justify-around bg-gray-base">
         <button
-          className="hover:text-orange opacity-25 hover:opacity-100"
+          className="opacity-25 hover:text-orange-primary/100"
           onClick={
             product.quantity === 1
               ? () => dispatch(removeFromCart(product))
@@ -52,7 +52,7 @@ const CartItem = ({ product }: CartItemProps) => {
         </button>
         <p className="font-bold">{product.quantity}</p>
         <button
-          className="hover:text-orange opacity-25 hover:opacity-100"
+          className="opacity-25 hover:text-orange-primary/100"
           onClick={() => dispatch(addToCart(product))}
         >
           +
