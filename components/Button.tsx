@@ -57,5 +57,6 @@ const Button = ({ children, intent, size, ...props }: ButtonProps) => {
     </button>
   )
 }
+Button.displayName = 'Button'
 
 export default Button
