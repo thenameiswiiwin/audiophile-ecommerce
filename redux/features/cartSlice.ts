@@ -15,12 +15,14 @@ interface CartState {
   cart: CartItem[]
   totalItems: number
   totalPrice: number
+  success: boolean
 }
 
 const INITIAL_STATE: CartState = {
   cart: [],
   totalItems: 0,
   totalPrice: 0,
+  success: false,
 }
 
 const cartSlice = createSlice({
@@ -112,6 +114,9 @@ const cartSlice = createSlice({
       return state
     },
     emptyCart: () => INITIAL_STATE,
+    setSuccess: (state, action: PayloadAction<boolean>) => {
+      state.success = action.payload
+    },
   },
 })
 
@@ -121,6 +126,7 @@ export const {
   minusOneFromCart,
   removeFromCart,
   emptyCart,
+  setSuccess,
 } = cartSlice.actions
 
 export default cartSlice.reducer
